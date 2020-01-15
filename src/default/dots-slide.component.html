@@ -1,0 +1,7 @@
+<div class="dot"
+     *ngFor="let dot of dots"
+     [ngClass]="dot.sizeClass"
+     [style.width.px]="dot.size"
+     [style.height.px]="dot.size"
+     [style.background]="dot.bgColor"
+     [style.animation-delay.s]="dot.delay"></div>

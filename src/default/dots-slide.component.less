@@ -1,0 +1,32 @@
+.dot {
+  width: 20px;
+  height: 20px;
+  background: #3ac;
+  border-radius: 100%;
+  display: inline-block;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: loader-anim-scale;
+  transform: translateZ(0);
+  &.small {
+    width: 10px;
+    height: 10px;
+  }
+  &.large {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@keyframes loader-anim-scale {
+  0% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.7) translateZ(0);
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+}

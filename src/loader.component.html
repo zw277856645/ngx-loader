@@ -1,0 +1,20 @@
+<ng-template #defaultLoading>
+  <dots-slide></dots-slide>
+</ng-template>
+
+<ng-template #defaultLayout>
+  <div class="overlay"
+       [class.full-screen]="fullScreen"
+       [style.z-index]="zIndex"
+       [style.background-color]="dimmerColor"
+       [style.color]="color">
+    <div class="box">
+      <div class="loader-container">
+        <ng-template [ngTemplateOutlet]="loadingRender"></ng-template>
+      </div>
+      <div class="text">
+        <ng-container *switcherTemplateOutlet="text">{{text}}</ng-container>
+      </div>
+    </div>
+  </div>
+</ng-template>
