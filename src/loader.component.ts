@@ -109,7 +109,7 @@ export class LoaderComponent {
             this.hideFlag = setTimeout(() => this.destroyView(), delay);
         } else {
             if (this.view) {
-                //  this.view.destroy();
+                this.view.destroy();
                 this.view = null;
             }
         }
