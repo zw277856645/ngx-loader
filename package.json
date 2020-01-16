@@ -1,6 +1,6 @@
 {
   "name": "@demacia/ngx-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Flexible angular loading plugin，width load awesome built-in",
   "scripts": {
     "build": "ng-packagr -p package.json",
@@ -58,6 +58,7 @@
     "rimraf": "2.6.1",
     "rxjs-tslint": "0.1.7",
     "tslint": "5.11.0",
+    "load-awesome": "1.1.0",
     "codelyzer": "5.1.0",
     "typescript": "3.4.5",
     "webpack": "4.19.1",

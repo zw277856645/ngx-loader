@@ -1,4 +1,4 @@
-import { TemplateRef } from '@angular/core';
+import { ElementRef, TemplateRef } from '@angular/core';
 
 export const DEFAULT_LOADER_NAME = 'primary';
 export const LOADER_SHOW_DELAY_CLASS = 'loader-show-delay';
@@ -25,6 +25,8 @@ export class LoaderConfig extends LayoutContext {
     showDelay?: number;
 
     hideDelay?: number;
+
+    invisibleOnLoading?: boolean | Element | ElementRef;
 }
 
 export class LoaderOperator extends LoaderConfig {

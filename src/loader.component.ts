@@ -33,6 +33,8 @@ export class LoaderComponent {
 
     @Input() @InputNumber() zIndex: number = 9999;
 
+    @Input() invisibleOnLoading: boolean | Element | ElementRef = false;
+
     @Input() name: string = DEFAULT_LOADER_NAME;
 
     private view: EmbeddedViewRef<LayoutContext>;
@@ -74,6 +76,26 @@ export class LoaderComponent {
         }
     }
 
+    private get invisibleElement() {
+        if (this.invisibleOnLoading instanceof ElementRef) {
+            return this.invisibleOnLoading.nativeElement;
+        } else if (this.invisibleOnLoading instanceof Element) {
+            return this.invisibleOnLoading;
+        }
+    }
+
+    private setHidden(ele: Element) {
+        this.renderer.setStyle(ele, 'visibility', 'hidden');
+    }
+
+    private setVisible(ele: Element) {
+        this.renderer.setStyle(ele, 'visibility', 'visible');
+    }
+
+    private static toBoolean(value: any) {
+        return value != null && `${value}` !== 'false';
+    }
+
     private createView() {
         if (!this.fullScreen) {
             let parentStyles = getComputedStyle(this.eleRef.nativeElement.parentElement);
@@ -85,6 +107,13 @@ export class LoaderComponent {
         if (this.view) {
             clearTimeout(this.hideFlag);
             this.view.destroy();
+        }
+
+        if (LoaderComponent.toBoolean(this.invisibleOnLoading)) {
+            this.setHidden(this.eleRef.nativeElement);
+        }
+        if (this.invisibleElement) {
+            this.setHidden(this.invisibleElement);
         }
 
         this.view = this.layoutRender.createEmbeddedView({
@@ -111,6 +140,13 @@ export class LoaderComponent {
             if (this.view) {
                 this.view.destroy();
                 this.view = null;
+
+                if (LoaderComponent.toBoolean(this.invisibleOnLoading)) {
+                    this.setVisible(this.eleRef.nativeElement);
+                }
+                if (this.invisibleElement) {
+                    this.setVisible(this.invisibleElement);
+                }
             }
         }
     }

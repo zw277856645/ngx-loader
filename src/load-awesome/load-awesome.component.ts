@@ -14,7 +14,7 @@ interface LoadAwesomeConfig {
     selector: 'load-awesome',
     templateUrl: './load-awesome.component.html',
     styleUrls: [
-        './loaders.css',
+        '../../node_modules/load-awesome/docs/assets/loaders.css',
         './load-awesome.component.less'
     ]
 })
