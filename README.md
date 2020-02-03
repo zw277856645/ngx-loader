@@ -67,6 +67,9 @@ export class ExampleComponent {
 **控制中心**
 - [LoaderComponent](https://zw277856645.gitlab.io/ngx-loader/components/LoaderComponent.html)
 
+**服务**
+- [LoaderService](https://zw277856645.gitlab.io/ngx-loader/injectables/LoaderService.html)
+
 **默认 loading**
 - [DotsSlideComponent](https://zw277856645.gitlab.io/ngx-loader/components/DotsSlideComponent.html)
 

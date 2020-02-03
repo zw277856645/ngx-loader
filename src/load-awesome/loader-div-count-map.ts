@@ -1,3 +1,6 @@
+/**
+ * @ignore
+ */
 export const LOADER_DIV_COUNT_MAP = {
     'ball-8bits': 16,
     'ball-atom': 4,

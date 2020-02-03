@@ -1,0 +1,68 @@
+@cborder: 1px solid rgba(34, 36, 38, .15);
+
+.code-box {
+  border: @cborder;
+  border-radius: 4px;
+  & > .demo {
+    display: flex;
+    align-items: stretch;
+    & > .param {
+      border-right: @cborder;
+      width: 20%;
+      background: #fafafa;
+      padding: 3px 0;
+      min-height: 45vh;
+      & > .config {
+        padding-bottom: 6px;
+        &:not(:first-child) {
+          border-top: @cborder;
+        }
+        & > * {
+          width: fill-available;
+          min-width: auto;
+        }
+        label {
+          padding: 5px 8px;
+          font-weight: bold;
+          display: block;
+          & + * {
+            margin: 0 8px;
+          }
+        }
+        .ui.grid.thin .column {
+          padding: 5px 0 0 0;
+          &:first-child {
+            padding-top: 0;
+          }
+        }
+        .ui.grid .column > * {
+          flex-grow: 1;
+        }
+        .button:only-child {
+          margin: 0;
+        }
+        sm-dropdown.small {
+          font-size: 12px;
+          min-height: 0;
+          ::ng-deep .menu::-webkit-scrollbar {
+            width: .4em;
+          }
+        }
+      }
+    }
+    & > .run {
+      flex-grow: 1;
+    }
+  }
+  & > .code {
+    border-top: @cborder;
+    padding: 8px;
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      & > code {
+        border-radius: 4px;
+      }
+    }
+  }
+}

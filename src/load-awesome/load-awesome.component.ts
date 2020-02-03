@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { LOADER_DIV_COUNT_MAP } from './loader-div-count-map';
 
 interface LoadAwesomeConfig {
@@ -10,22 +10,50 @@ interface LoadAwesomeConfig {
     divs: any[];
 }
 
+/**
+ * [load awesome]{@link https://github.danielcardoso.net/load-awesome/animations.html}
+ *
+ * ---
+ *
+ * 使用示例
+ *
+ * ~~~ html
+ * <loader [loadingRender]="loadingTemplate">
+ *   <ng-template #loadingTemplate>
+ *     <load-awesome size="small" type="ball-8bits"></load-awesome>
+ *   </ng-template>
+ * </loader>
+ * ~~~
+ */
 @Component({
     selector: 'load-awesome',
     templateUrl: './load-awesome.component.html',
     styleUrls: [
-        '../../node_modules/load-awesome/docs/assets/loaders.css',
-        './load-awesome.component.less'
-    ]
+        './load-awesome.component.css',
+        './load-awesome-fix.component.less'
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoadAwesomeComponent {
 
+    /**
+     * 颜色
+     */
     @Input() color: string = '#333';
 
-    @Input() size: 'small' | 'default' | '2x' | '3x';
+    /**
+     * 大小
+     */
+    @Input() size: 'small' | 'default' | '2x' | '3x' = 'default';
 
-    @Input() type: string;
+    /**
+     * loading 类型，`需去掉 la- 前缀`
+     */
+    @Input() type: string = 'ball-scale-multiple';
 
+    /**
+     * @ignore
+     */
     get config(): LoadAwesomeConfig {
         if (LOADER_DIV_COUNT_MAP[ this.type ]) {
             return {

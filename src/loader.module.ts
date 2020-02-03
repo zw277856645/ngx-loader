@@ -5,11 +5,17 @@ import { CmjsLibModule } from '@demacia/cmjs-lib';
 import { DotsSlideComponent } from './default/dots-slide.component';
 import { LoadAwesomeComponent } from './load-awesome/load-awesome.component';
 
+/**
+ * @ignore
+ */
 const MODULES = [
     CommonModule,
     CmjsLibModule
 ];
 
+/**
+ * @ignore
+ */
 const COMPONENTS = [
     LoaderComponent,
     DotsSlideComponent,

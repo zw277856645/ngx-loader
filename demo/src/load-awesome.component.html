@@ -1,0 +1,50 @@
+<div class="ui container">
+  <div class="code-box">
+    <div class="demo">
+      <div class="param">
+        <div class="config">
+          <label>size</label>
+          <div class="ui grid thin">
+            <div class="one column row">
+              <sm-radio name="size" value="small" label="small" [(ngModel)]="size"></sm-radio>
+            </div>
+            <div class="one column row">
+              <sm-radio name="size" value="default" label="default" [(ngModel)]="size"></sm-radio>
+            </div>
+            <div class="one column row">
+              <sm-radio name="size" value="2x" label="2x" [(ngModel)]="size"></sm-radio>
+            </div>
+            <div class="one column row">
+              <sm-radio name="size" value="3x" label="3x" [(ngModel)]="size"></sm-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="config">
+          <label>color</label>
+          <div class="ui mini fluid input">
+            <input type="text" autocomplete="off" readonly [(colorPicker)]="color" [style.background]="color"
+                   [(ngModel)]="color">
+          </div>
+        </div>
+
+        <div class="config">
+          <label>type</label>
+          <sm-dropdown class="small search selection" [(ngModel)]="type">
+            <div class="item" *ngFor="let tp of types">{{tp}}</div>
+          </sm-dropdown>
+        </div>
+      </div>
+      <div class="run">
+        <loader [fullScreen]="false" [loadingRender]="loading">
+          <ng-template #loading>
+            <load-awesome [size]="size" [color]="color" [type]="type"></load-awesome>
+          </ng-template>
+        </loader>
+      </div>
+    </div>
+    <div class="code">
+      <pre><code [highlight]="code"></code></pre>
+    </div>
+  </div>
+</div>
