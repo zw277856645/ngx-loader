@@ -1,81 +1,79 @@
-<div class="ui container">
-  <div class="code-box">
-    <div class="demo">
-      <div class="param">
-        <div class="config">
-          <label>fullScreen</label>
-          <div class="ui grid thin">
-            <div class="one column row">
-              <sm-radio name="fullScreen" [value]="true" label="true" [(ngModel)]="fullScreen"></sm-radio>
-            </div>
-            <div class="one column row">
-              <sm-radio name="fullScreen" [value]="false" label="false" [(ngModel)]="fullScreen"></sm-radio>
-            </div>
+<div class="code-box">
+  <div class="demo">
+    <div class="param">
+      <div class="config">
+        <label>fullScreen</label>
+        <div class="ui grid thin">
+          <div class="one column row">
+            <sm-radio name="fullScreen" [value]="true" label="true" [(ngModel)]="fullScreen"></sm-radio>
           </div>
-        </div>
-
-        <div class="config">
-          <label>text</label>
-          <div class="ui mini fluid input">
-            <input type="text" autocomplete="off" [(ngModel)]="text">
-          </div>
-        </div>
-
-        <div class="config">
-          <label>color</label>
-          <div class="ui mini fluid input">
-            <input type="text" autocomplete="off" readonly [(colorPicker)]="color" [style.background]="color"
-                   [(ngModel)]="color">
-          </div>
-        </div>
-
-        <div class="config">
-          <label>dimmerColor</label>
-          <div class="ui mini fluid input">
-            <input type="text" autocomplete="off" readonly [(colorPicker)]="dimmerColor"
-                   [style.background]="dimmerColor" [(ngModel)]="dimmerColor">
-          </div>
-        </div>
-
-        <div class="config">
-          <label>showDelay</label>
-          <div class="ui mini fluid right labeled input">
-            <input type="text" autocomplete="off" [(ngModel)]="showDelay" onlyNumber positive>
-            <div class="ui basic label">ms</div>
-          </div>
-        </div>
-
-        <div class="config">
-          <label>hideDelay</label>
-          <div class="ui mini fluid right labeled input">
-            <input type="text" autocomplete="off" [(ngModel)]="hideDelay" onlyNumber positive>
-            <div class="ui basic label">ms</div>
+          <div class="one column row">
+            <sm-radio name="fullScreen" [value]="false" label="false" [(ngModel)]="fullScreen"></sm-radio>
           </div>
         </div>
       </div>
-      <div class="run">
-        <loader [text]="text"
-                [fullScreen]="fullScreen"
-                [loadingRender]="loading"
-                [color]="color"
-                [dimmerColor]="dimmerColor"
-                [showDelay]="showDelay"
-                [hideDelay]="hideDelay"
-                [invisibleOnLoading]="playIcon">
-          <ng-template #loading>
-            <load-awesome size="2x" color="#fff" type="ball-spin-clockwise-fade"></load-awesome>
-          </ng-template>
 
-          <div class="content">
-            <div class="item" *ngFor="let content of contents">{{content}}</div>
-          </div>
-        </loader>
+      <div class="config">
+        <label>text</label>
+        <div class="ui mini fluid input">
+          <input type="text" autocomplete="off" [(ngModel)]="text">
+        </div>
+      </div>
 
-        <img src="play.svg" class="play" (click)="run()" #playIcon>
+      <div class="config">
+        <label>color</label>
+        <div class="ui mini fluid input">
+          <input type="text" autocomplete="off" readonly [(colorPicker)]="color" [style.background]="color"
+                 [(ngModel)]="color">
+        </div>
+      </div>
+
+      <div class="config">
+        <label>dimmerColor</label>
+        <div class="ui mini fluid input">
+          <input type="text" autocomplete="off" readonly [(colorPicker)]="dimmerColor"
+                 [style.background]="dimmerColor" [(ngModel)]="dimmerColor">
+        </div>
+      </div>
+
+      <div class="config">
+        <label>showDelay</label>
+        <div class="ui mini fluid right labeled input">
+          <input type="text" autocomplete="off" [(ngModel)]="showDelay" onlyNumber positive>
+          <div class="ui basic label">ms</div>
+        </div>
+      </div>
+
+      <div class="config">
+        <label>hideDelay</label>
+        <div class="ui mini fluid right labeled input">
+          <input type="text" autocomplete="off" [(ngModel)]="hideDelay" onlyNumber positive>
+          <div class="ui basic label">ms</div>
+        </div>
       </div>
     </div>
-    <div class="code">
-      <pre><code [highlight]="code"></code></pre>
+    <div class="run">
+      <loader [text]="text"
+              [fullScreen]="fullScreen"
+              [loadingRender]="loading"
+              [color]="color"
+              [dimmerColor]="dimmerColor"
+              [showDelay]="showDelay"
+              [hideDelay]="hideDelay"
+              [invisibleOnLoading]="playIcon">
+        <ng-template #loading>
+          <load-awesome size="2x" color="#fff" type="ball-spin-clockwise-fade"></load-awesome>
+        </ng-template>
+
+        <div class="content">
+          <div class="item" *ngFor="let content of contents">{{content}}</div>
+        </div>
+      </loader>
+
+      <img src="play.svg" class="play" (click)="run()" #playIcon>
     </div>
+  </div>
+  <div class="code">
+    <pre><code [highlight]="code"></code></pre>
   </div>
 </div>

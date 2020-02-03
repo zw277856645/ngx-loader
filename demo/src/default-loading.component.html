@@ -1,68 +1,66 @@
-<div class="ui container">
-  <div class="code-box">
-    <div class="demo">
-      <div class="param">
-        <div class="config">
-          <label>size</label>
-          <div class="ui grid thin">
-            <div class="one column row">
-              <sm-radio name="size" value="small" label="small" [(ngModel)]="size"></sm-radio>
-            </div>
-            <div class="one column row">
-              <sm-radio name="size" value="default" label="default" [(ngModel)]="size"></sm-radio>
-            </div>
-            <div class="one column row">
-              <sm-radio name="size" value="large" label="large" [(ngModel)]="size"></sm-radio>
-            </div>
-            <div class="one column row">
-              <sm-radio name="size" value="custom" label="自定义" [(ngModel)]="size"></sm-radio>
-            </div>
-            <div class="one column row" *ngIf="size === 'custom'">
-              <div class="ui mini fluid right labeled input">
-                <input type="text" autocomplete="off" [(ngModel)]="sizeNumber" onlyNumber positive>
-                <div class="ui basic label">px</div>
-              </div>
-            </div>
+<div class="code-box">
+  <div class="demo">
+    <div class="param">
+      <div class="config">
+        <label>size</label>
+        <div class="ui grid thin">
+          <div class="one column row">
+            <sm-radio name="size" value="small" label="small" [(ngModel)]="size"></sm-radio>
           </div>
-        </div>
-
-        <div class="config">
-          <label>delayGap</label>
-          <div class="ui mini fluid right labeled input">
-            <input type="text" autocomplete="off" [(ngModel)]="delayGap" onlyNumber positive>
-            <div class="ui basic label">ms</div>
+          <div class="one column row">
+            <sm-radio name="size" value="default" label="default" [(ngModel)]="size"></sm-radio>
           </div>
-        </div>
-
-        <div class="config">
-          <label>bgColors</label>
-          <div class="ui grid thin">
-            <div class="one column row" *ngFor="let color of bgColors;trackBy:trackByIndex;index as i">
-              <div class="ui mini fluid icon input">
-                <input type="text" autocomplete="off" readonly [(colorPicker)]="color"
-                       [style.background]="color" [(ngModel)]="color" (colorPickerChange)="bgColors[i] = color">
-                <i class="icon minus circular link inverted" (click)="removeColor(i)"></i>
-              </div>
-            </div>
-            <div class="on column row">
-              <div class="ui mini basic button" (click)="addColor()">
-                <i class="icon add"></i>
-                添加
-              </div>
+          <div class="one column row">
+            <sm-radio name="size" value="large" label="large" [(ngModel)]="size"></sm-radio>
+          </div>
+          <div class="one column row">
+            <sm-radio name="size" value="custom" label="自定义" [(ngModel)]="size"></sm-radio>
+          </div>
+          <div class="one column row" *ngIf="size === 'custom'">
+            <div class="ui mini fluid right labeled input">
+              <input type="text" autocomplete="off" [(ngModel)]="sizeNumber" onlyNumber positive>
+              <div class="ui basic label">px</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="run">
-        <loader [fullScreen]="false" [loadingRender]="loading">
-          <ng-template #loading>
-            <dots-slide [size]="curSize" [bgColors]="bgColors" [delayGap]="delayGap"></dots-slide>
-          </ng-template>
-        </loader>
+
+      <div class="config">
+        <label>delayGap</label>
+        <div class="ui mini fluid right labeled input">
+          <input type="text" autocomplete="off" [(ngModel)]="delayGap" onlyNumber positive>
+          <div class="ui basic label">ms</div>
+        </div>
+      </div>
+
+      <div class="config">
+        <label>bgColors</label>
+        <div class="ui grid thin">
+          <div class="one column row" *ngFor="let color of bgColors;trackBy:trackByIndex;index as i">
+            <div class="ui mini fluid icon input">
+              <input type="text" autocomplete="off" readonly [(colorPicker)]="color"
+                     [style.background]="color" [(ngModel)]="color" (colorPickerChange)="bgColors[i] = color">
+              <i class="icon minus circular link inverted" (click)="removeColor(i)"></i>
+            </div>
+          </div>
+          <div class="on column row">
+            <div class="ui mini basic button" (click)="addColor()">
+              <i class="icon add"></i>
+              添加
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="code">
-      <pre><code [highlight]="code"></code></pre>
+    <div class="run">
+      <loader [fullScreen]="false" [loadingRender]="loading">
+        <ng-template #loading>
+          <dots-slide [size]="curSize" [bgColors]="bgColors" [delayGap]="delayGap"></dots-slide>
+        </ng-template>
+      </loader>
     </div>
+  </div>
+  <div class="code">
+    <pre><code [highlight]="code"></code></pre>
   </div>
 </div>
