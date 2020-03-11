@@ -271,10 +271,12 @@ export class LoaderComponent {
 
     private setHidden(ele: Element) {
         this.renderer.setStyle(ele, 'visibility', 'hidden');
+        this.renderer.setStyle(ele, 'opacity', 0);
     }
 
     private setVisible(ele: Element) {
         this.renderer.setStyle(ele, 'visibility', 'visible');
+        this.renderer.setStyle(ele, 'opacity', 1);
     }
 
     private static toBoolean(value: any) {
