@@ -71,4 +71,8 @@ export class DotsSlideComponent {
             return config;
         });
     }
+
+    trackByIndex(i: number) {
+        return i;
+    }
 }

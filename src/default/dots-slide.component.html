@@ -1,5 +1,5 @@
 <div class="dot"
-     *ngFor="let dot of dots"
+     *ngFor="let dot of dots;trackBy:trackByIndex"
      [ngClass]="dot.sizeClass"
      [style.width.px]="dot.size"
      [style.height.px]="dot.size"
