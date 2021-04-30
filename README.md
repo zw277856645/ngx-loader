@@ -10,9 +10,9 @@ Flexible angular loading plugin，width load awesome built-in
 - 支持延时显示，在响应较快时 loader 不会显示。`(使用 css 延时，不会被 DOM 渲染阻塞)`
 
 ## 🔗 链接
-- [DOCS](https://zw277856645.gitlab.io/ngx-loader)
-- [DEMO](https://zw277856645.gitlab.io/ngx-loader/components/LoaderComponent.html#example)
-- [PROJECT](https://gitlab.com/zw277856645/ngx-loader)
+- [DOCS](https://zw277856645.github.io/ngx-loader)
+- [DEMO](https://zw277856645.github.io/ngx-loader/components/LoaderComponent.html#example)
+- [PROJECT](https://github.com/zw277856645/ngx-loader)
 
 ## 📦 安装
 > npm install @demacia/ngx-loader --save
@@ -65,13 +65,13 @@ export class ExampleComponent {
 ## 🎨 主要部件导航
 
 **控制中心**
-- [LoaderComponent](https://zw277856645.gitlab.io/ngx-loader/components/LoaderComponent.html)
+- [LoaderComponent](https://zw277856645.github.io/ngx-loader/components/LoaderComponent.html)
 
 **服务**
-- [LoaderService](https://zw277856645.gitlab.io/ngx-loader/injectables/LoaderService.html)
+- [LoaderService](https://zw277856645.github.io/ngx-loader/injectables/LoaderService.html)
 
 **默认 loading**
-- [DotsSlideComponent](https://zw277856645.gitlab.io/ngx-loader/components/DotsSlideComponent.html)
+- [DotsSlideComponent](https://zw277856645.github.io/ngx-loader/components/DotsSlideComponent.html)
 
 **load awesome**
-- [LoadAwesomeComponent](https://zw277856645.gitlab.io/ngx-loader/components/LoadAwesomeComponent.html)
+- [LoadAwesomeComponent](https://zw277856645.github.io/ngx-loader/components/LoadAwesomeComponent.html)
