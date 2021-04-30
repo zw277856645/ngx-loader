@@ -10,7 +10,7 @@ cache:
 before_install:
   - export TZ='Asia/Shanghai'  
 install:
-  - npm i
+  - npm i 
 script:
   - npm run docs:build
   - npm run demo:build
